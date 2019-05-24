@@ -17,9 +17,8 @@ Utilizaremos [Dart](https://dart.dev/) para a realização do desafio.
 
 # Desafio
 ## Descrição
-```
 Você deve usar o número de casas para decifrar o texto e atualizar o arquivo JSON, no campo decifrado. O próximo passo é gerar um resumo criptográfico do texto decifrado usando o algoritmo **sha1** e atualizar novamente o arquivo JSON. OBS: você pode usar qualquer biblioteca de criptografia da sua linguagem de programação favorita para gerar o resumo sha1 do texto decifrado.
-```
+
 ## API
 https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=SEU_TOKEN
 
