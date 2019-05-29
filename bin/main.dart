@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:core';
 import 'package:http/http.dart' as http;
+import 'package:crypto/crypto.dart';
+
 
 //Link do arquivo Json
 const request = 'https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=02bb4223ace02495fd82a5e73053f7772b14a5dd';
@@ -21,7 +23,15 @@ void main() async{
     int numero_casas = codigo["numero_casas"];
     String cifrado = codigo["cifrado"];
 
-    print (decoder(cifrado, numero_casas));
+    //Texto decodificado
+    String decifrado = decoder(cifrado, numero_casas);
+    
+    //Resumo criptografico
+    var resumoCripto = sha1.convert(utf8.encode(decifrado));
+
+    print("Codigo cifrado       => $cifrado");
+    print("Codigo decifrado     => $decifrado");
+    print("Resumo criptografico => $resumoCripto");
 }
 
 // Decodificador
